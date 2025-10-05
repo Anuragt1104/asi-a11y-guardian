@@ -30,6 +30,11 @@ MAILBOX_SECRET=
 ASI_ONE_API_KEY=
 OPENAI_API_KEY=
 CLAUDE_API_KEY=
+ORCHESTRATOR_ADDR=
+ORCH_FETCHER_ADDR=
+ORCH_ANALYZER_ADDR=
+ORCH_METTA_ADDR=
+ORCH_RESOURCES_ADDR=
 ```
 
 Where to add credentials later:
@@ -60,6 +65,9 @@ After the Fetcher/Analyzer/MeTTa/Resource agents start, set their addresses in t
 https://example.com
 ```
 The Gateway will acknowledge and initiate an audit. It replies with a short summary and top 10 issues including fixes and references.
+
+Depth parameter:
+- You can pass an optional crawl depth via `AuditRequest.depth` (default 1). The orchestrator audits same‑host links up to that depth and aggregates issues across pages.
 
 ## Input/Output Models
 

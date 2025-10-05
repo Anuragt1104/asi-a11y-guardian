@@ -39,6 +39,7 @@ async def handle_message(ctx: Context, sender: str, msg: ChatMessage):
             text = item.text.strip()
             # Parse a URL from input text (very simple heuristic)
             url = text.split()[0]
+            ctx.storage.set("last_chat_sender", sender)
             orch_addr = ctx.storage.get(ORCHESTRATOR_ADDR_KEY)
             if not orch_addr:
                 await ctx.send(sender, create_text_chat("Orchestrator address not set. Use admin set command."))
