@@ -15,46 +15,97 @@ Multi-agent autonomous web accessibility auditing for WCAG 2.1/2.2 using uAgents
 - MeTTa Rules Agent (WCAG mapping): `src/metta_agent/agent.py`, knowledge: `src/metta_agent/knowledge.metta`
 - Resource Agent (free references): `src/resource_agent/agent.py`
 
-## Local Setup
+## Quick Start
 
-1) Python 3.11
-2) Create env and install pinned deps
-```
+### 1. Setup Environment
+```bash
+# Install dependencies
 ./scripts/bootstrap.sh
+
+# Create .env from template
+cp env.template .env
 ```
 
-3) Copy `.env.sample` to `.env` and fill later (optional for local dev):
+### 2. Run Tests
+```bash
+source .venv/bin/activate
+PYTHONPATH=$PWD pytest tests/ -v
 ```
-AGENTVERSE_TOKEN=
-MAILBOX_SECRET=
-ASI_ONE_API_KEY=
-OPENAI_API_KEY=
-CLAUDE_API_KEY=
+
+### 3. Local Testing
+```bash
+# Start all agents
+./scripts/run_all_agents.sh
+
+# Extract agent addresses
+./scripts/extract_addresses.sh
+
+# Copy addresses to .env, then restart main agents
+./scripts/restart_main_agents.sh
+
+# Stop all agents
+./scripts/stop_all_agents.sh
+```
+
+See [LOCAL_TESTING.md](./LOCAL_TESTING.md) for detailed testing instructions.
+
+### 4. Deploy to Agentverse
+See [DEPLOYMENT.md](./DEPLOYMENT.md) for step-by-step deployment guide.
+
+## Environment Variables
+
+Create `.env` from `env.template`:
+
+```bash
+# Agent Addresses (auto-generated on first run)
 ORCHESTRATOR_ADDR=
 ORCH_FETCHER_ADDR=
 ORCH_ANALYZER_ADDR=
 ORCH_METTA_ADDR=
 ORCH_RESOURCES_ADDR=
+
+# Agentverse (for deployment)
+AGENTVERSE_TOKEN=
+MAILBOX_SECRET=
+ASI_ONE_API_KEY=
+
+# Optional LLM keys (not currently used)
+OPENAI_API_KEY=
+CLAUDE_API_KEY=
 ```
 
-Where to add credentials later:
-- Place them in `.env` (same keys as above). They are loaded by `src/common/settings.py`.
-- On Agentverse, you can set Mailbox secret and publish the manifest; the agent code is already `mailbox=True` on the Gateway.
+## Testing
 
-## Run locally (mailbox agents)
-
-Open separate terminals, activate venv (`. .venv/bin/activate`), then run each:
-
-```
-python -m src.fetcher_agent.agent
-python -m src.analyzer_agent.agent
-python -m src.metta_agent.agent
-python -m src.resource_agent.agent
-python -m src.orchestrator_agent.agent
-python -m src.gateway_agent.agent
+### Unit Tests
+```bash
+source .venv/bin/activate
+PYTHONPATH=$PWD pytest tests/ -v
 ```
 
-After the Fetcher/Analyzer/MeTTa/Resource agents start, set their addresses in the Orchestrator and Gateway via Agentverse (preferred) or direct code changes. For hackathon judging, publish manifests for all agents in Agentverse; enable Chat Protocol on the Gateway so ASI:One can reach it.
+Tests cover:
+- ✅ Analyzer: HTML accessibility checks
+- ✅ MeTTa: WCAG knowledge graph mapping
+- ✅ Fetcher: HTTP fetching and link extraction
+
+### Local Multi-Agent Testing
+
+Use the helper scripts for easy local testing:
+
+```bash
+# Start all 6 agents in background
+./scripts/run_all_agents.sh
+
+# Wait 5 seconds, then extract addresses
+./scripts/extract_addresses.sh
+
+# Copy addresses to .env, then restart
+./scripts/restart_main_agents.sh
+
+# Stop all agents when done
+./scripts/stop_all_agents.sh
+```
+
+Or run manually in separate terminals (see [LOCAL_TESTING.md](./LOCAL_TESTING.md)).
 
 ## Using via ASI:One
 

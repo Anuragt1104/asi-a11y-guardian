@@ -1,0 +1,26 @@
+{
+    "a11y_analyzer": {
+        "identity_key": "30676b78de2dc6badad8cef488c62b39e2f0973548638c2ca08e7fe6ffd8fdf6",
+        "wallet_key": "p/xOsae8gsBU+fFdxoAwFmtCLegX6Yef0vzGoAGR9/I="
+    },
+    "a11y_metta": {
+        "identity_key": "175756059acf02a24431893e346e1ed15c9dfc8b1b6659cac9de1e00d78e8788",
+        "wallet_key": "UtEQCwXBsm6QaXsI4uUKsLXl2UGfb8PdsjNdHyevX6s="
+    },
+    "a11y_fetcher": {
+        "identity_key": "e27085ec819aa9421a61086d0e6507b678e432daf583dcd8b33075cd24da3dc7",
+        "wallet_key": "ML5sxJsjZVhG0LnHfc6P+9EdqZ6VWGy2hzyOUH4ZH/c="
+    },
+    "a11y_resources": {
+        "identity_key": "d90c9ef158a2a4da25a75a72847f9a5bc100d8a046285ba38ff8e2908d63ffaa",
+        "wallet_key": "keIt5knPwLh3drZiFD8VgaUcsQrMyPzEEgt6U3Ruyic="
+    },
+    "a11y_orchestrator": {
+        "identity_key": "07fbf5fc388499e3cd3eb37c3c0b3e465277d3908420655f041a0df6f8827307",
+        "wallet_key": "aksv0CjhukJg7+Fl9skzO1gGjtIiC/zbzQO/qV88S5E="
+    },
+    "a11y_gateway": {
+        "identity_key": "8ec28d73ea75d9485baa4dfbd322511f239c659954ba91561d9543b74c0be8af",
+        "wallet_key": "HE0KipszNqUger1rj4wShz+rjfWM9E8Yb8BHKALmizc="
+    }
+}
