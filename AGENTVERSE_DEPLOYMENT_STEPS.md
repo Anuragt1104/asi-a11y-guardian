@@ -200,6 +200,7 @@ ORCH_RESOURCES_ADDR=<agent4_address_from_above>
 ```
 uagents>=0.15,<0.17
 uagents-core==0.3.10
+httpx==0.27.2
 ```
 
 ### Configuration
@@ -211,6 +212,7 @@ uagents-core==0.3.10
 ### Environment Variables
 ```bash
 ORCHESTRATOR_ADDR=<orchestrator_address_from_above>
+ASI_ONE_API_KEY=<sk_3c365195e8c1492a9af71f53cf77a9e524aa83d53d564b38b27f0b1e3c391a96>
 ```
 
 ### Description (for ASI:One)
