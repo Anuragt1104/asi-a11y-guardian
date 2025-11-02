@@ -82,11 +82,6 @@ source .venv/bin/activate
 PYTHONPATH=$PWD pytest tests/ -v
 ```
 
-Tests cover:
-- ✅ Analyzer: HTML accessibility checks
-- ✅ MeTTa: WCAG knowledge graph mapping
-- ✅ Fetcher: HTTP fetching and link extraction
-
 ### Local Multi-Agent Testing
 
 Use the helper scripts for easy local testing:
@@ -129,17 +124,6 @@ See `src/common/models.py` for:
 - `MeTTaQueryRequest` → `MeTTaQueryResponse`
 - `ResourceRequest` → `ResourceResponse`
 
-## Notes
 
-- This repo is scaffolded for local development; you can create a new GitHub repo and push this code as-is. The `.env.sample` shows all credentials you’ll add later.
-- All external calls use free resources (HTTP, MDN, W3C/WAI). No paid APIs are required.
-- Extend `knowledge.metta` for more WCAG mappings (e.g., contrast, focus order, keyboard traps) and refine analyzer rules.
 
-## Demo
-
-Record a 3–5 min walkthrough:
-1) Start agents (mailbox), show Agentverse manifests.
-2) In ASI:One, input a URL. Show logs across agents.
-3) Show summarized report and fixes.
-4) Brief code tour (Chat Protocol handler, MeTTa mapping).
 
