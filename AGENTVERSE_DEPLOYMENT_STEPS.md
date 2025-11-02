@@ -347,56 +347,5 @@ Gateway Agent Name: a11y_gateway
 Gateway Agent Address: agent1q
 ```
 
----
 
-## Next Steps After Deployment 🎬
-
-1. **Test thoroughly** via ASI:One with different URLs
-2. **Record demo video** (3-5 minutes):
-   - Show Agentverse dashboard
-   - Live ASI:One demo
-   - Code walkthrough
-3. **Update README** with deployed agent addresses
-4. **Submit to hackathon** with video and GitHub link
-
----
-
-## Demo Video Script 📹
-
-### Introduction (30 sec)
-- "Hi, I'm presenting A11y Guardian, a multi-agent autonomous accessibility auditor"
-- "Problem: Manual WCAG testing is slow and complex"
-- "Solution: 6 AI agents collaborate to audit websites automatically"
-
-### Agentverse Dashboard (1 min)
-- Show all 6 agents deployed and running
-- Highlight Chat Protocol on gateway
-- Show agent communication flow diagram
-
-### Live Demo (2 min)
-- Open ASI:One interface
-- Send: `https://www.w3.org/WAI/demos/bad/`
-- Show real-time processing
-- Display comprehensive report with:
-  - Issues found
-  - WCAG Success Criteria mappings
-  - Severity levels
-  - Actionable fixes
-  - W3C/MDN references
-
-### Code Walkthrough (1 min)
-- Show MeTTa knowledge graph (`knowledge.metta`)
-- Explain multi-agent orchestration
-- Highlight accessibility checks in analyzer
-
-### Conclusion (30 sec)
-- Technologies: Fetch.ai uAgents, SingularityNET MeTTa, Chat Protocol
-- Real-world impact: Automated WCAG compliance
-- GitHub: github.com/yourusername/asi-a11y-guardian
-
----
-
-**Good luck with your deployment!** 🚀
-
-If you encounter any issues, check the logs in Agentverse for each agent.
 
